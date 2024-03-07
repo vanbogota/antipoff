@@ -6,7 +6,6 @@ import { getAllPartners } from "@/app/lib/data";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { addPartners } from "@/store/slice/partners-slice";
 import { MoreButton } from "./MoreButton";
-import Image from "next/image";
 
 export default function Cards() {
     const dispatch = useAppDispatch();
@@ -25,10 +24,12 @@ export default function Cards() {
     let more = allPartners.slice(8, 12);
 
     const [showMore, setShowMore] = useState(false);
+    const [rotated, setRotated] = useState(false);
 
     const handleClick = () => {
         setShowMore(!showMore)
         setPartners(showMore ? initial : [...initial, ...more])
+        setRotated(!rotated);
     }
 
     return (
@@ -42,16 +43,10 @@ export default function Cards() {
                 ))}
             </div>
             <div className="footer">
-                <button onClick={handleClick}>
-                    <p>Показать еще</p>
-                    <Image
-                        src="showmore.svg"
-                        alt="pic"
-                        width={24}
-                        height={24}
-                        style={{ padding: '3px 4px' }}
-                    />
-                </button>
+                <MoreButton
+                    onClick={handleClick}
+                    rotated={rotated}
+                />
             </div>
         </>
     )

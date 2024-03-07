@@ -239,7 +239,7 @@ header button {
   align-self: flex-end;
 }
 
-.footer button {
+.footer__morebutton {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -257,10 +257,18 @@ header button {
   }
 }
 
-.footer button p {
+.footer__morebutton p {
   line-height: 22px;
   font-size: var(--font-size-smalltext);
   margin-right: 8px;
+}
+
+.footer__morebutton .arrow-down {
+  transition: transform 0.3s ease;
+}
+
+.footer__morebutton .arrow-up {
+  transform: rotate(180deg);
 }
 
 .partner_info {

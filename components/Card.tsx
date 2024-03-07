@@ -24,7 +24,7 @@ export default function Card({
                     height={124}
                     style={{ borderRadius: '50%' }}
                 />
-                <p>{partner.first_name} {partner.last_name} {partner.id}</p>
+                <p>{partner.first_name} {partner.last_name}</p>
             </div>
             <button className="like">
                 <Image
