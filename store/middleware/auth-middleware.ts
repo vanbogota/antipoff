@@ -20,7 +20,7 @@ export const registerUser = (email: any, password: any): ThunkAction<void, RootS
         body: JSON.stringify(state)
     }
 
-    let response
+    let response = null;
 
     try {
         response = await fetch('https://reqres.in/api/register', initData);
@@ -35,40 +35,4 @@ export const registerUser = (email: any, password: any): ThunkAction<void, RootS
     }
 }
 
-// export const logout = (): ThunkAction<void, RootState, unknown, any> => async (dispatch, getState) => {
-//     localStorage.removeItem('userToken');
-//     dispatch(logOut())
-// }
-
-// export const authMiddleware = (store: any) => (next: any) => async (action: any) => {
-//     if (action.type === 'auth/signup') {
-
-//         const initData = {
-//             method: "POST",
-//             headers: {
-//                 'Content-Type': 'application/json'
-//             },
-//             body: JSON.stringify(state)
-//         }
-
-//         let response
-
-//         try {
-//             response = await fetch('https://reqres.in/api/register', initData);
-//             if (response.ok) {
-//                 const data = await response.json();
-//                 store.dispatch(setToken(data.token));
-//             } else {
-//                 console.log('Результат запроса при регистрации', response.status)
-//             }
-//         } catch (error) {
-//             console.log('Ошибка при регистрации:', error);
-//         }
-
-//     } else if (action.type === 'auth/logout') {
-//         localStorage.removeItem('userToken');
-//         store.dispatch(logOut())
-//     }
-//     return next(action);
-// }
 

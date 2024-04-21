@@ -1,6 +1,6 @@
 "use client"
 import Image from "next/image";
-import { MyHeaderProps } from "../app/lib/definitions";
+import { MyHeaderProps } from "../lib/definitions";
 import { useRouter } from "next/navigation";
 import ExitButton from "./ExitButton";
 

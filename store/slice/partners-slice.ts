@@ -1,4 +1,4 @@
-import { Partner } from "@/app/lib/definitions";
+import { Partner } from "@/lib/definitions";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 

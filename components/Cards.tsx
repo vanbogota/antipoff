@@ -1,8 +1,8 @@
 'use client'
 import React, { useEffect, useState } from "react";
 import Card from "./Card";
-import { Partner } from "@/app/lib/definitions";
-import { getAllPartners } from "@/app/lib/data";
+import { Partner } from "@/lib/definitions";
+import { getAllPartners } from "@/lib/data";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { addPartners } from "@/store/slice/partners-slice";
 import { MoreButton } from "./MoreButton";
@@ -16,7 +16,7 @@ export default function Cards() {
             dispatch(addPartners(value));
             setPartners(value.slice(0, 8));
         })
-    }, []);
+    }, [dispatch]);
 
     const allPartners = useAppSelector((store) => store.partners);
 

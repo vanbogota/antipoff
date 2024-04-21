@@ -1,6 +1,6 @@
 
 import Image from "next/image";
-import { PartnersCardProp } from "../app/lib/definitions";
+import { PartnersCardProp } from "../lib/definitions";
 import { useRouter } from "next/navigation";
 
 export default function Card({

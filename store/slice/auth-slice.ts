@@ -1,12 +1,18 @@
 'use client'
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
+let initData = null;
+
+if (typeof window !== 'undefined') {
+    initData = localStorage.getItem('userToken');
+}
+
 interface IAuthState {
     token: string | null
 }
 
 const initialState: IAuthState = {
-    token: localStorage.getItem('userToken'),
+    token: initData
 };
 
 export const auth = createSlice({
